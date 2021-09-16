@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+	<h2><%= post.title %></h2>
+	<div><%= truncate(post.body, :length=>35) %></div>
+	<br>
+	<%= link_to "Read Post", post %>
+	<%= link_to "Read Post", post , remote: true %>
+	<%#= link_to "Read Post", post_path(post.id, :format => 'xml') %>
+
+<% end%>

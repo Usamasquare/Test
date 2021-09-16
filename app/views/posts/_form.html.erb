@@ -1,0 +1,28 @@
+<%#= form_for @post ,remote: true do |f| %>
+<%= form_with model: @post  do |f| %>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+	<br>
+	<%= f.label :body %><br>
+	<%= f.text_area :body %><br>
+	<br>
+
+	<%= f.collection_radio_buttons :id, Post.all, :id, :title %>
+	<br>
+
+	<%= f.fields_for :comments do |fee|%>
+
+	<%= fee.label :commenter %><br>
+	<%= fee.text_field :commenter %><br>
+	
+	<%end%>
+  <%= f.submit %>
+
+  <%= form_with model: @post do |f| %>
+  	<%= f.label :testing%>
+  	<%= f.text_field :testing%>
+  	<%= f.label :pass%>
+  	<%= f.password_field :title %>
+  	<%= f.submit %>
+  <% end %>
+<% end %>

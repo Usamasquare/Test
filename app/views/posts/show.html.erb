@@ -1,0 +1,11 @@
+<h1><%= @post.title %> </h1>
+<div>
+	<%= @post.body %>
+	<%= format_name(@post) %>
+	<h3>Comment</h3>
+	<%= @post.comments.first.commenter %>
+</div> 
+<br>
+<%= link_to "Edit Post", edit_post_path(@post) , data: {confirm: "bro u okay?"}%>
+
+<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
